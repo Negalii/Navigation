@@ -1,9 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function A() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Text>A Page</Text>
+      <Button title='To b' onPress={() => navigation.navigate('B')}/>
     </View>
   );
 }

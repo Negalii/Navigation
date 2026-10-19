@@ -1,21 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
-import A from './screens/screenA'
-import B from './screens/screenB'
-import C from './screens/screenC'
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Tab = createBottomTabNavigator();
 
+import C from './screens/ScreenC.jsx'
+import TabNavigator from './component/ComponentA.jsx';
+
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName='A'screenOptions={{headerShown:false}}>
-        <Tab.Screen name ="A" component={A} />
-        <Tab.Screen name ="B" component={B} /> 
-        <Tab.Screen name ="C" component={C} />
+      <Tab.Navigator initialRouteName="Tabs" screenOptions={{headerShown:false}}>
+        <Tab.Screen name="Tabs" component={TabNavigator} /> 
+        <Tab.Screen name="Root" component={C} />
       </Tab.Navigator>
     </NavigationContainer>
   );
