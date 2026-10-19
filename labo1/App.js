@@ -1,12 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+const Tab = createBottomTabNavigator();
+
+import C from './screens/ScreenC.jsx'
+import TabNavigator from './component/ComponentA.jsx';
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator initialRouteName="Tabs" screenOptions={{headerShown:false}}>
+        <Tab.Screen name="Tabs" component={TabNavigator} /> 
+        <Tab.Screen name="Root" component={C} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
